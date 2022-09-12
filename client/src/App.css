@@ -1,0 +1,590 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+.test__ticket {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+}
+.test__ticket:hover{
+  opacity: 60%;
+}
+
+/*----------------NAV----------------*/
+
+#menu {
+  z-index: 2;
+}
+
+#menu-bar {
+  width: 45px;
+  height: 40px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color: #DC052D;
+  display: block;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+#bar1 {
+  transform: translateY(-4px);
+}
+
+#bar3 {
+  transform: translateY(4px);
+}
+
+.nav {
+  transition: 0.3s ease;
+  display: none;
+}
+
+.nav ul {
+  padding: 0 22px;
+  text-align: left;
+}
+
+.nav li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  font-weight: bold;
+}
+
+.menu-bg, #menu {
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.menu-bg {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  margin: 30px 0 20px 20px;
+  background: radial-gradient(circle, #dc052c98, #dc052c8b);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.change {
+  display: block;
+}
+
+.change .bar {
+  background-color: white;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar2 {
+  opacity: 0;
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change-bg {
+  width: 520px;
+  height: 460px;
+  transform: translate(-60%,-30%);
+}
+
+/*--------------------REST'--------------*/
+
+* {
+ 
+  line-height: 2rem;
+  font-family: 'Lato', sans-serif;
+  max-width: 650px;
+}
+
+h1 {
+  font-weight: 200;
+    font-size: 42px;
+    line-height: 2.5rem;
+}
+
+@media only screen and (min-width: 650px) {
+  * {
+    margin: auto;
+  }
+  .concert__input--form {
+    display: flex !important;
+  }
+  }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.App {
+  text-align: center;
+
+}
+
+
+.frontPage__bkgr--img {
+ width: 100%;
+ display: flex;
+ z-index: -10;
+ position: absolute;
+}
+.frontpage__logo {
+grid-column: span 3;
+width: 250px;
+transition: all 0.5s;
+
+
+}
+
+.frontpage__logo:hover {
+  transform: scale(40%);
+}
+.frontpage__slogan{
+  padding-top: 10px;
+  padding-bottom: 130px;
+  width: 250px;
+  grid-column: span 5;
+}
+
+.frontpage__text {
+  grid-column: span 5;
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.frontpage__contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.frontpage__adress {
+  color: white;
+  font-weight: 300;
+  font-size: 12px;
+}
+.frontpage__email {
+  color: white;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.center__div {
+  padding-top: 50px;
+  z-index: 1000;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  transition: all 0.5s;
+  justify-items: center;
+}
+
+  .IG {
+    width: 10%;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+ 
+  .YT {
+    width: 10%;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .fork {
+    width: 10%;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .IG:hover{
+    transform: rotate(-360deg);
+
+  }
+  .YT:hover{
+    transform: translateY(-12px);
+
+  }
+  .fork:hover{
+    transform: translateX(12px);
+
+
+
+  }
+
+ 
+.input__search{
+  width: 10%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgb(249 90 50 / 78%);
+  z-index: 20000;
+  border-radius: 50%;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  transition: all 0.5s;
+}
+
+.input__search::placeholder {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+    .downArrow {
+    width: 20%;
+    animation: shake 5s;
+    animation-iteration-count: infinite;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+ 
+  @keyframes shake {
+    0% { transform: translate(0px, -10px) rotate(0deg); }
+    20% { transform: translate(0px, -10px) rotate(0deg); }
+    40% { transform: translate(0px, 10px) rotate(0deg); }
+    60% { transform: translate(0px, -10px) rotate(0deg); }
+    80% { transform: translate(0px, 10px) rotate(0deg); }
+    100% { transform: translate(0px, -10px) rotate(0deg); }
+  }
+
+  /*-------------BOOKING PAGE-----------*/
+
+.booking__page {
+  border: none;
+  text-align: left;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  margin-left: 4%;
+  margin-right: 4%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.concert__icon{
+  z-index: -100;
+  width: 100px;
+}
+
+.concert__arrive {
+  grid-column: span 2;
+}
+.concert__reserved {
+  grid-column: span 2;
+}
+.booking__div {
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.booking__div h2 {
+  margin-bottom: 0px;
+}
+
+.boka--btn{
+  box-shadow: 1px 3px 8px 0px #ffa054;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 80%;
+  border: none;
+  background: #f49a52;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.cart__payment {
+  grid-column: span 3;
+    width: 100%;
+}
+
+.boka--btn:hover{
+  cursor: alias;
+background: #feb67c;
+width: 82%;
+}
+
+.total__price--div {
+  border-top: 2px solid black;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+.booking__input {
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.cart__div {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  transition: all 0.5s;
+  box-shadow: -1px 2px 19px 0px #feb67c;
+  justify-items: center;
+  align-items: end;
+
+}
+
+.home__btn {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+/*--------------CONCERTS---------*/
+
+
+.artists__bkgr {
+  border: none;
+padding: 20px;
+  margin-top: 40px;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 40px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg)50%/30px 100%;
+
+}
+.artists__bkgr:hover{
+  transform: scale(102%);
+}
+
+.bkgr__color--1 {
+  background-color: white;
+}
+.bkgr__color--2 {
+  background-color: black;
+  color: white;
+}
+
+.read__more{
+  color: #ff4f00;
+  font-weight: 300;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.code__img {
+  width: 100%;
+}
+  .concert__list {
+    padding-bottom: 20px;
+    background: #80808026;
+
+
+}
+
+.artists__name {
+  grid-column: span 2;
+  text-align: left;
+  margin-top: 0px;
+
+}
+
+.artists__date {
+  text-align: left;
+  font-weight: 300;
+
+
+}
+
+.artists__genre {
+  grid-column: span 2;
+  text-align: right;
+  font-size: 35px;
+  background-color: black;
+  color: white;
+  font-weight: 300;
+  margin-right: -20px;
+  padding-right: 22px;
+  padding-left: 10px;
+  width: fit-content;
+  float: right;
+  position: relative;
+  margin-top: -200px;
+
+  
+}
+
+.artists__container {
+  padding-bottom: 20px;
+}
+
+.artists__desc {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 200;
+
+}
+
+.artists__time--1 {
+text-align: center;
+border: 1px solid black;
+padding-left: 5px;
+padding-right: 5px;
+transition: all 1s;
+z-index: 100;
+}
+.artists__time--2 {
+  text-align: center;
+  border: 1px solid white;
+  padding-left: 5px;
+  padding-right: 5px;
+transition: all 1s;
+
+  color: white;
+  z-index: 100;
+  }
+
+  .artists__time--2:hover{
+    background-color: rgba(255, 255, 255, 0.136);
+ }
+  .artists__time--1:hover{
+    background-color: rgba(0, 0, 0, 0.136);
+
+  }
+
+.artists__price {
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+
+}
+
+.artists__btn {
+  font-size: 30px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*-------------UPLOAD CONCERTS---------------*/
+
+.concert__input--form {
+  margin-left: 4%;
+  margin-right: 4%;
+  display: block;
+}
+.artist__box {
+  display: grid;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 40px;
+  gap: 2rem;
+  width: 80%;
+}
+
+.input__artist--desc {
+  height: 200px;
+  width: 100%;
+}
+
+
+/*--------------FOOTER---------------*/
+
+.Footer {
+  padding-left: 4%;
+  padding-right: 4%;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.hidden {
+  display: none;
+  transition: all 0.5s;
+  animation-delay: 2s;
+}
+
+.pop-up__div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;  
+  background: #000000da;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 400000;
+}
+
+.pop-up__close--div {
+display: flex;
+flex-direction: column;
+
+}
+.artists--btn {
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #f49a52;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.artists--btn:hover {
+  background: #feb67c;
+  transform: scale(105%);
+}
+
+.close__btn {
+  float: right;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+.pop-up__text {
+  color: white;
+  margin: 0;
+    padding-bottom: 10px;
+}
+
+.pop-up__form {
+ 
+  display: grid;
+  gap: 1rem;
+
+    
+}
