@@ -55,7 +55,7 @@ function Admin() {
   }
 
   const addArtist = async () => {
-    await Axios.post("http://localhost:3001/api/uploadArtist", {
+    await Axios.post("https://kaijasalong.com/api/uploadArtist", {
       name: name,
       genre: genre,
       price: price,

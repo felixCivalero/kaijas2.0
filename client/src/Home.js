@@ -39,7 +39,7 @@ function Home() {
   /*---------------ADDING KAIJAS-FRIENDS TO DB-----------*/
 
   const addCostumer = () => {
-    Axios.post("http://localhost:3001/api/uploadCostumer", {
+    Axios.post("https://kaijasalong.com/api/uploadCostumer", {
       costumerName: costumerName,
       costumerMail: costumerMail,
       costumerPhone: costumerPhone,
@@ -74,9 +74,11 @@ function Home() {
   }, 6000);
 
   const fetchConcerts = async () => {
-    await Axios.get("http://localhost:3001/api/getConcert").then((response) => {
-      setArtistsList(response.data);
-    });
+    await Axios.get("https://kaijasalong.com/api/getConcert").then(
+      (response) => {
+        setArtistsList(response.data);
+      }
+    );
   };
 
   const closeDiv = () => {

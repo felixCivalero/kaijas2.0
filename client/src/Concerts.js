@@ -20,7 +20,7 @@ function Concerts() {
   const [bookingAmount, setBookingAmount] = useState("");
 
   const waitingList = async (val) => {
-    await Axios.post("http://localhost:3001/api/uploadWaiting", {
+    await Axios.post("https://kaijasalong.com/api/uploadWaiting", {
       bookingName: bookingName,
       bookingMail: bookingMail,
       bookingTel: bookingTel,
@@ -55,7 +55,7 @@ function Concerts() {
   }, []);
 
   const fetchConcert = async () => {
-    await Axios.get(`http://localhost:3001/api/getArtist`, {
+    await Axios.get(`https://kaijasalong.com/api/getArtist`, {
       params: params,
     }).then((response) => {
       setConcert(response.data[0]);
@@ -63,7 +63,7 @@ function Concerts() {
   };
 
   const book = async (val) => {
-    await Axios.post("http://localhost:3001/api/uploadBooking", {
+    await Axios.post("https://kaijasalong.com/api/uploadBooking", {
       guestsName: bookingName,
       guestsMail: bookingMail,
       guestsTel: bookingTel,
@@ -82,7 +82,7 @@ function Concerts() {
 
   const updateConcert = (concertId, maxGuests) => {
     const updateCapacity = maxGuests - bookingAmount;
-    Axios.post("http://localhost:3001/api/updateConcert", {
+    Axios.post("https://kaijasalong.com/api/updateConcert", {
       id: concertId,
       capacity: updateCapacity,
     });
@@ -90,7 +90,7 @@ function Concerts() {
   const randomNumber = Math.floor(Math.random() * 4) + 1;
 
   const payNow = async (val) => {
-    await Axios.post("http://localhost:3001/api/create-checkout-session", {
+    await Axios.post("https://kaijasalong.com/api/create-checkout-session", {
       guestsName: bookingName,
       guestsMail: bookingMail,
       guestsTel: bookingTel,
