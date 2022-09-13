@@ -28,13 +28,10 @@ const facebook = require("./assets/facebook.png");
 function Home() {
   const [artistsList, setArtistsList] = useState([]);
   const [searchName, setSearchName] = useState("");
-  const [hovered, setHovered] = useState(false);
   const [costumerName, setCostumerName] = useState();
   const [costumerMail, setCostumerMail] = useState();
   const [costumerPhone, setCostumerPhone] = useState();
   const [costumerInterest, setCostumerInterest] = useState();
-  const div = useRef();
-  const popUp = useRef();
 
   /*---------------ADDING KAIJAS-FRIENDS TO DB-----------*/
 
@@ -51,27 +48,9 @@ function Home() {
     });
   };
 
-  const toggleHover = () => {
-    setHovered(!hovered);
-    if (!hovered) {
-      div.current.style.borderRadius = "0%";
-      div.current.style.width = "80%";
-      div.current.style.paddingLeft = "10px";
-      div.current.style.textAlign = "left";
-    } else {
-      div.current.style.borderRadius = "50%";
-      div.current.style.width = "10%";
-      div.current.style.textAlign = "center";
-    }
-  };
-
   useEffect(() => {
     fetchConcerts();
   }, []);
-
-  setTimeout(() => {
-    popUp.current.classList.remove("hidden");
-  }, 6000);
 
   const fetchConcerts = async () => {
     await Axios.get("https://kaijasalong.com/api/getConcert").then(
@@ -79,10 +58,6 @@ function Home() {
         setArtistsList(response.data);
       }
     );
-  };
-
-  const closeDiv = () => {
-    popUp.current.classList.add("hidden");
   };
 
   return (
@@ -98,143 +73,64 @@ function Home() {
         src={background}
         className="frontPage__bkgr--img"
       />
-      <div className="center__div">
-        <img
-          alt="Kaijas logo"
-          src={logoWhite}
-          className="frontpage__logo"
-        ></img>
-        <img
-          alt="Kaijas slogan"
-          src={slogan}
-          className="frontpage__slogan"
-        ></img>
-        <p className="frontpage__text">Stockholms tiniest live-stage</p>
-      </div>
-      <div className="socials">
-        <a href="https://instagram.com/kaijasalong">
-          {" "}
-          <img alt="Kaijas Instagram" src={insta} className="IG"></img>
-        </a>
-        <a href="https://www.youtube.com/channel/UCO_zGTRaiQCafOBQrK9bIkA">
-          <img alt="Kaijas Youtube" src={youtube} className="YT"></img>
-        </a>
-        <a href="https://module.lafourchette.com/sv_SE/module/742658-b98e8#/4815696/pdh">
-          <img alt="Kaijas at The Fork" src={facebook} className="fork"></img>
-        </a>
-      </div>
-      <div className="frontpage__contact">
-        <a
-          href="https://www.google.com/maps/place/Kaijas+Musiksalong/@59.333415,18.0906118,15z/data=!4m2!3m1!1s0x0:0x21196749cc621178?sa=X&ved=2ahUKEwiT94228Y_6AhWp_CoKHdYwCtAQ_BJ6BAhHEAU"
-          className="frontpage__adress"
-        >
-          Storgatan 44, Östermalm
-        </a>
-        <a href="tel:0734233504" className="frontpage__email">
-          +46 73-423 35 04
-        </a>
-        <a href="mailto:info@kaijasalong.com" className="frontpage__email">
-          info@kaijasalong.com
-        </a>
-      </div>
-      <div className="buttom__frontpage">
-        <img
-          alt="Kaijas Scroll thorugh concerts"
-          src={downArrow}
-          className="downArrow"
-        />
-      </div>
-      <div className="concert__list" onClick={(e) => {}}>
-        <div className="search__div">
-          <input
-            ref={div}
-            className="input__search "
-            placeholder="🔍"
-            onMouseEnter={toggleHover}
-            onMouseLeave={toggleHover}
-            onChange={(event) => {
-              setSearchName(event.target.value);
-            }}
-          ></input>
+      <div className="top__div">
+        <div className="center__div">
+          <img
+            alt="Kaijas logo"
+            src={logoWhite}
+            className="frontpage__logo"
+          ></img>
+          <img
+            alt="Kaijas slogan"
+            src={slogan}
+            className="frontpage__slogan"
+          ></img>
+          <p className="frontpage__text">Stockholms tiniest live-stage</p>
         </div>
-        <div ref={popUp} className="pop-up__div hidden">
-          <button
-            className="close__btn"
-            onClick={(e) => {
-              closeDiv();
-            }}
+        <div className="socials">
+          <a href="https://instagram.com/kaijasalong">
+            {" "}
+            <img alt="Kaijas Instagram" src={insta} className="IG"></img>
+          </a>
+          <a href="https://www.youtube.com/channel/UCO_zGTRaiQCafOBQrK9bIkA">
+            <img alt="Kaijas Youtube" src={youtube} className="YT"></img>
+          </a>
+          <a href="https://module.lafourchette.com/sv_SE/module/742658-b98e8#/4815696/pdh">
+            <img alt="Kaijas at The Fork" src={facebook} className="fork"></img>
+          </a>
+        </div>
+        <div className="frontpage__contact">
+          <a
+            href="https://www.google.com/maps/place/Kaijas+Musiksalong/@59.333415,18.0906118,15z/data=!4m2!3m1!1s0x0:0x21196749cc621178?sa=X&ved=2ahUKEwiT94228Y_6AhWp_CoKHdYwCtAQ_BJ6BAhHEAU"
+            className="frontpage__adress"
           >
-            x
-          </button>
-          <div className="pop-up__close--div">
-            <h2 className="pop-up__text">Bli Kaijas Vän!</h2>
-            <p className="pop-up__text">
-              Var först med nyheter, erbjudanden och konserter
-            </p>
-          </div>
-          <div className="pop-up__form">
-            <input
-              className="costumer__input--name"
-              type="text"
-              name="costumerName"
-              placeholder="För- & efternamn.."
-              onChange={(event) => {
-                setCostumerName(event.target.value);
-              }}
-            />
-            <input
-              className="costumer__input--mail"
-              type="email"
-              name="costumerMail"
-              placeholder="Mail"
-              onChange={(event) => {
-                setCostumerMail(event.target.value);
-              }}
-            />
-            <input
-              className="costumer__input--tel"
-              type="tel"
-              name="costumerNumber"
-              placeholder="Tel"
-              onChange={(event) => {
-                setCostumerPhone(event.target.value);
-              }}
-            />
-            <textarea
-              className="costumer__input--interest"
-              type="text"
-              name="costumerGenre"
-              placeholder="Intresserad av"
-              onChange={(event) => {
-                setCostumerInterest(event.target.value);
-              }}
-            />
-            <button
-              type="submit"
-              name="costumerButton"
-              className="artists--btn"
-              onClick={(e) => {
-                e.preventDefault();
-                if (
-                  !costumerName &&
-                  !costumerMail &&
-                  !costumerInterest &&
-                  !costumerPhone
-                ) {
-                  return;
-                }
-                if (!costumerName || !costumerMail || !costumerInterest) {
-                  alert("Fyll i nog med fält så vi kan kontakta er!");
-                  return;
-                }
-                addCostumer();
-                closeDiv(e.target.parentElement.parentElement);
-              }}
-            >
-              Bli vän!
-            </button>
-          </div>
+            Storgatan 44, Östermalm
+          </a>
+          <a href="tel:0734233504" className="frontpage__email">
+            +46 73-423 35 04
+          </a>
+          <a href="mailto:info@kaijasalong.com" className="frontpage__email">
+            info@kaijasalong.com
+          </a>
         </div>
+        <div className="buttom__frontpage">
+          <img
+            alt="Kaijas Scroll thorugh concerts"
+            src={downArrow}
+            className="downArrow"
+          />
+        </div>
+      </div>
+      <div className="search__div">
+        <input
+          className="input__search "
+          placeholder="Search for your concert..."
+          onChange={(event) => {
+            setSearchName(event.target.value);
+          }}
+        ></input>
+      </div>
+      <div className="concert__list">
         {artistsList
           // eslint-disable-next-line
           .filter((val) => {
@@ -429,6 +325,76 @@ function Home() {
             );
           })}
       </div>
+      <div className="pop-up__div">
+        <div className="pop-up__close--div">
+          <h2 className="pop-up__text">Kaija's Friend?</h2>
+          <p className="pop-up__text">
+            We are proud of our intimate space. As Kaija's friend you'll be the
+            first to know about what happends here.
+          </p>
+        </div>
+        <div className="pop-up__form">
+          <input
+            className="costumer__input--name"
+            type="text"
+            name="costumerName"
+            placeholder="För- & efternamn.."
+            onChange={(event) => {
+              setCostumerName(event.target.value);
+            }}
+          />
+          <input
+            className="costumer__input--mail"
+            type="email"
+            name="costumerMail"
+            placeholder="Mail"
+            onChange={(event) => {
+              setCostumerMail(event.target.value);
+            }}
+          />
+          <input
+            className="costumer__input--tel"
+            type="tel"
+            name="costumerNumber"
+            placeholder="Tel"
+            onChange={(event) => {
+              setCostumerPhone(event.target.value);
+            }}
+          />
+          <textarea
+            className="costumer__input--interest"
+            type="text"
+            name="costumerGenre"
+            placeholder="Intresserad av"
+            onChange={(event) => {
+              setCostumerInterest(event.target.value);
+            }}
+          />
+          <button
+            type="submit"
+            name="costumerButton"
+            className="artists--btn"
+            onClick={(e) => {
+              e.preventDefault();
+              if (
+                !costumerName &&
+                !costumerMail &&
+                !costumerInterest &&
+                !costumerPhone
+              ) {
+                return;
+              }
+              if (!costumerName || !costumerMail || !costumerInterest) {
+                alert("Fyll i nog med fält så vi kan kontakta er!");
+                return;
+              }
+              addCostumer();
+            }}
+          >
+            Bli vän!
+          </button>
+        </div>
+      </div>
       <div className="Footer">
         <h2>© Kaijas Salong AB</h2>
         <p>559335-9077</p>
@@ -437,6 +403,7 @@ function Home() {
           Storgatan 44, 114 55 Sthlm
         </a>
       </div>
+
       {/* <GoToTop /> */}
     </motion.div>
   );

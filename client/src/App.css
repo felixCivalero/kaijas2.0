@@ -234,24 +234,22 @@ transition: all 0.5s;
 
  
 .input__search{
-  width: 10%;
+  width: 80%;
   border: none;
+  border-radius: 30px;
   color: white;
   font-size: 18px;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
+  padding-left: 30px;
   background-color: rgb(249 90 50 / 78%);
   z-index: 20000;
-  border-radius: 50%;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
   transition: all 0.5s;
 }
 
 .input__search::placeholder {
-  color: white;
-  font-size: 18px;
+  color: rgba(255, 255, 255, 0.676);
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -535,15 +533,14 @@ transition: all 1s;
 }
 
 .pop-up__div {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;  
+  width: fit-content;
   background: #000000da;
   padding: 20px;
   border-radius: 5px;
   z-index: 400000;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 4%;
 }
 
 .pop-up__close--div {
