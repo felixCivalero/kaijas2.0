@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const circles = require("./assets/TESTing-02.png");
 // const stripes = require("./assets/testingigen-02.png");
 // const pacMan = require("./assets/testingigen-03.png");
+
 const acceptedPayments = require("./assets/paymentMethod.png");
 
 function Concerts() {
