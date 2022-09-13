@@ -34,7 +34,6 @@ function Admin() {
 
   function displayArtistInput(e) {
     e.preventDefault();
-    console.log(pwd, user);
     if (pwd === 1234 && user === "info") {
       loginContainer.classList.add("hidden");
       uploadArtistInfo.classList.remove("hidden");

@@ -41,7 +41,6 @@ function Concerts() {
 
   const displayCart = (val) => {
     const cart = document.querySelector(".cart__div");
-    console.log(val);
     if (val === "-") {
       cart.classList.add("hidden");
     } else {
