@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ReadMoreReadLess from "./ReadMoreReadLess";
 import { motion } from "framer-motion";
 
-const background = require("./assets/BakgrundJazz-min.png");
+const background = require("./assets/BakgrundJazz.png");
 const logoWhite = require("./assets/Logo-white.png");
 const slogan = require("./assets/slogan.png");
 
@@ -338,7 +338,7 @@ function Home() {
             className="costumer__input--name"
             type="text"
             name="costumerName"
-            placeholder="För- & efternamn.."
+            placeholder="Full name.."
             onChange={(event) => {
               setCostumerName(event.target.value);
             }}
@@ -347,7 +347,7 @@ function Home() {
             className="costumer__input--mail"
             type="email"
             name="costumerMail"
-            placeholder="Mail"
+            placeholder="Email.."
             onChange={(event) => {
               setCostumerMail(event.target.value);
             }}
@@ -356,7 +356,7 @@ function Home() {
             className="costumer__input--tel"
             type="tel"
             name="costumerNumber"
-            placeholder="Tel"
+            placeholder="Tel..."
             onChange={(event) => {
               setCostumerPhone(event.target.value);
             }}
@@ -365,7 +365,7 @@ function Home() {
             className="costumer__input--interest"
             type="text"
             name="costumerGenre"
-            placeholder="Intresserad av"
+            placeholder="Interested in..."
             onChange={(event) => {
               setCostumerInterest(event.target.value);
             }}
@@ -391,7 +391,7 @@ function Home() {
               addCostumer();
             }}
           >
-            Bli vän!
+            Become Friend!
           </button>
         </div>
       </div>

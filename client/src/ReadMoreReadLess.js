@@ -11,7 +11,7 @@ const ReadMoreReadLess = ({ children }) => {
       <p className={`artists__desc`}>
         {isReadMoreShown
           ? children.substring(0, 350)
-          : children.substring(0, 40)}
+          : children.substring(0, 60)}
         <button onClick={toggleBtn} className="read__more">
           {isReadMoreShown ? "READ LESS..." : "...READ MORE"}
         </button>

@@ -162,12 +162,12 @@ app.post("/api/uploadBooking", (req, res) => {
       <li>Adress: <strong>Storgatan 44, Stockholm</strong></li>
     </ul>
     <p>Totalt biljettpris: ${totalPrice} kr</p>
-    <p>När din betalning är genomförd kommer kvitto på mail</p>
+    <p>När din betalning är genomförd kommer kvitto på mail.</p>
     <p>Vi ses snart!</p>
     <p>Med vänliga hälsningar,<br>Saga och Felix på Kaijas</p>
 
     <p>Har du frågor inför besöket? Ring <a href="tel:073-4233504">073-423 35 04</a> eller maila till <a href="mailto:info@kaijasalong.com">info@kaijasalong.com</a> så hjälper vi dig!</p>
-    <small>Avbokning ska ske minst 48 timmar innan konsertens datum. Avbkokning senare än 48 timmar, eller eventuell no-show, debiteras med det fulla biljettpriset.</small>
+    <small>Biljetten återbetalas ej</small>
     `,
   };
 
